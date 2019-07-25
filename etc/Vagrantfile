@@ -1,0 +1,46 @@
+Vagrant.configure("2") do |config|
+  config.vm.define "n1" do |n1|
+    n1.vm.box = "ubuntu/xenial64"
+    n1.vm.hostname = "n1"
+    n1.vm.network "private_network", ip: "192.168.50.4"
+
+    n1.vm.provider "virtualbox" do |vb|
+      vb.name = "n1"
+      vb.gui = false
+      vb.memory = 32678
+      vb.cpus = 8
+    end
+
+    n1.vm.provision :shell, path: "provision.sh"
+  end
+
+  config.vm.define "n2" do |n2|
+    n2.vm.box = "ubuntu/xenial64"
+    n2.vm.hostname = "n2"
+    n2.vm.network "private_network", ip: "192.168.50.5"
+
+    n2.vm.provider "virtualbox" do |vb|
+      vb.name = "n2"
+      vb.gui = false
+      vb.memory = 3072
+      vb.cpus = 2
+    end
+
+    n2.vm.provision :shell, path: "provision.sh"
+  end
+
+  config.vm.define "n3" do |n3|
+    n3.vm.box = "ubuntu/xenial64"
+    n3.vm.hostname = "n3"
+    n3.vm.network "private_network", ip: "192.168.50.6"
+
+    n3.vm.provider "virtualbox" do |vb|
+      vb.name = "n3"
+      vb.gui = false
+      vb.memory = 3072
+      vb.cpus = 2
+    end
+
+    n3.vm.provision :shell, path: "provision.sh"
+  end
+end
