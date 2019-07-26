@@ -29,7 +29,7 @@ function execute_master_cmd {
         -o "StrictHostKeyChecking=no" \
         -o "UserKnownHostsFile=/dev/null" \
         -i "etc/.vagrant/machines/n1/virtualbox/private_key" \
-        ubuntu@172.24.1.10 "cd /opt/openstack-helm-infra && $*"
+        ubuntu@172.24.1.10 "cd /opt/openstack-helm-infra && \$*"
 }
 
 # Start/provision Vagrant VMs
