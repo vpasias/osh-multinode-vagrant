@@ -116,3 +116,4 @@ etc/armada/policy.yaml
 .vscode/
 
 .vagrant/*
+etc/.vagrant/*
