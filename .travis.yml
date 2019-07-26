@@ -1,4 +1,7 @@
 notifications:
   email: false
-script:
-  - ./tools/gate/shellcheck.sh
+dist: bionic
+jobs:
+  include:
+    - stage: lint
+      script: ./tools/gate/shellcheck.sh
