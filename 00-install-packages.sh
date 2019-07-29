@@ -17,11 +17,33 @@
 set -xe
 
 sudo apt-get update
+sudo apt-get remove --purge -y vagrant
 sudo apt-get install --no-install-recommends -y \
         ca-certificates \
         git \
         make \
         nmap \
         curl \
-        vagrant \
-        virtualbox
+        dnsmasq-base \
+        ebtables \
+        libvirt-bin \
+        libvirt-dev \
+        libxml2-dev \
+        libxslt-dev \
+        qemu \
+        ruby-dev \
+        virtualbox \
+        zlib1g-dev
+
+# NOTE(drewwalters96): Install latest vagrant version for compatibility with
+# vagrant-disksize plugin.
+INSTALL_LOCATION="$(mktemp -d)"
+INSTALL_FILE="${INSTALL_LOCATION}/vagrant.zip"
+
+curl -L -o "$INSTALL_FILE" \
+  https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_linux_amd64.zip
+
+unzip "$INSTALL_FILE"
+sudo mv "$INSTALL_LOCATION/vagrant" /usr/bin/vagrant
+
+rm -rf "$INSTALL_LOCATION"
