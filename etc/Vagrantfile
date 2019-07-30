@@ -3,6 +3,7 @@ Vagrant.configure("2") do |config|
     n1.vm.box = "ubuntu/xenial64"
     n1.vm.hostname = "n1"
     n1.vm.network "private_network", ip: "172.24.1.10"
+    n1.disksize.size = "50GB"
 
     n1.vm.provider "virtualbox" do |vb|
       vb.name = "n1"
@@ -18,6 +19,7 @@ Vagrant.configure("2") do |config|
     n2.vm.box = "ubuntu/xenial64"
     n2.vm.hostname = "n2"
     n2.vm.network "private_network", ip: "172.24.1.11"
+    n2.disksize.size = "50GB"
 
     n2.vm.provider "virtualbox" do |vb|
       vb.name = "n2"
@@ -33,6 +35,7 @@ Vagrant.configure("2") do |config|
     n3.vm.box = "ubuntu/xenial64"
     n3.vm.hostname = "n3"
     n3.vm.network "private_network", ip: "172.24.1.12"
+    n3.disksize.size = "50GB"
 
     n3.vm.provider "virtualbox" do |vb|
       vb.name = "n3"
