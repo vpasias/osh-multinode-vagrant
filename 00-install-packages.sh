@@ -17,8 +17,8 @@
 set -xe
 
 sudo apt-get update
-sudo apt-get remove --purge -y vagrant
-sudo apt-get install --no-install-recommends -y \
+sudo DEBIAN_FRONTEND=noninteractive apt-get remove --purge -y vagrant
+sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
         ca-certificates \
         git \
         make \
