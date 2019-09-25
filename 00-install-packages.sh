@@ -46,3 +46,5 @@ curl -L -o "$INSTALL_FILE" \
 
 sudo dpkg -i "$INSTALL_FILE"
 rm -rf "$INSTALL_LOCATION"
+
+vagrant plugin install vagrant-disksize
