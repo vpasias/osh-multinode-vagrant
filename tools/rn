@@ -1,0 +1,6 @@
+kubectl get pods -o wide
+kubectl drain --ignore-daemonsets --force n5
+kubectl drain --ignore-daemonsets --force n6
+kubectl delete node n5
+kubectl delete node n6
+kubectl get pods -o wide
