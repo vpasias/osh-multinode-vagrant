@@ -41,7 +41,7 @@ INSTALL_LOCATION="$(mktemp -d)"
 INSTALL_FILE="${INSTALL_LOCATION}/vagrant.deb"
 
 curl -L -o "$INSTALL_FILE" \
-  https://releases.hashicorp.com/vagrant/2.2.19/vagrant_2.2.19_x86_64.deb
+  https://releases.hashicorp.com/vagrant/2.2.18/vagrant_2.2.18_x86_64.deb
 
 sudo dpkg -i "$INSTALL_FILE"
 rm -rf "$INSTALL_LOCATION"
