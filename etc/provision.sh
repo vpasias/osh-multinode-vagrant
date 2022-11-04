@@ -59,3 +59,5 @@ kubernetes_network_default_device: enp0s8
 EOF
 
 sudo chown -R ubuntu: /opt
+
+#sed -i 's/deploy-k8s/deploy-k8s-kubeadm/' /opt/openstack-helm-infra/tools/gate/devel/start.sh"; done
