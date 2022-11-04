@@ -36,7 +36,7 @@ function execute_master_cmd {
 pushd "$(pwd)"
 cd etc
 
-vagrant up
+VAGRANT_EXPERIMENTAL="disks" vagrant up
 popd
 
 # Copy Vagrant SSH keys to all nodes
