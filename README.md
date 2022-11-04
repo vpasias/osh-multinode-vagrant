@@ -7,7 +7,7 @@ project and kubeadm.
 
 ## Getting Started
 
-Setup an Ubuntu 16.04 (Xenial) or Ubuntu 18.04 (Bionic) machine that supports
+Setup an Ubuntu 20.04 (Focal) machine that supports
 nested virtualization. Clone this repository and follow the directions below.
 
 **Run all scripts from the root directory of this repository.**
