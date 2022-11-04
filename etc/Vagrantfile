@@ -1,3 +1,9 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Enable the experimental disks feature via environment variable, requires Vagrant >=2.2.8.
+ENV["VAGRANT_EXPERIMENTAL"] = "disks"
+
 Vagrant.configure("2") do |config|
     
   config.vm.define "n1" do |n1|
