@@ -3,7 +3,7 @@
 set -xe
 
 declare -A \
-  NODES=( ["n1"]="172.24.1.10" ["n2"]="172.24.1.11" ["n3"]="172.24.1.12" )
+  NODES=( ["n1"]="172.24.1.10" ["n2"]="172.24.1.11" ["n3"]="172.24.1.12" ["n4"]="172.24.1.13" ["n5"]="172.24.1.14" ["n6"]="172.24.1.15" )
 
 function copy_keys_to_node {
   id_key="etc/.vagrant/machines/$1/virtualbox/private_key"
