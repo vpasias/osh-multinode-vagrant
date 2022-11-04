@@ -24,6 +24,9 @@ Vagrant.configure("2") do |config|
       vb.customize ["modifyvm", :id, "--largepages", "on"]
       # Use virtual processor identifiers  to accelerate context switching
       vb.customize ["modifyvm", :id, "--vtxvpid", "on"]
+      # Prevent VirtualBox from interfering with host audio stack
+      vb.customize ["modifyvm", :id, "--audio", "none"]
+      # Enable nested virtualisation  
       vb.customize ["modifyvm", :id, "--nested-hw-virt", "on"]
     end
 
@@ -51,6 +54,9 @@ Vagrant.configure("2") do |config|
       vb.customize ["modifyvm", :id, "--largepages", "on"]
       # Use virtual processor identifiers  to accelerate context switching
       vb.customize ["modifyvm", :id, "--vtxvpid", "on"]
+      # Prevent VirtualBox from interfering with host audio stack
+      vb.customize ["modifyvm", :id, "--audio", "none"]
+      # Enable nested virtualisation  
       vb.customize ["modifyvm", :id, "--nested-hw-virt", "on"]
     end
 
@@ -78,7 +84,10 @@ Vagrant.configure("2") do |config|
       vb.customize ["modifyvm", :id, "--largepages", "on"]
       # Use virtual processor identifiers  to accelerate context switching
       vb.customize ["modifyvm", :id, "--vtxvpid", "on"]
-      vb.customize ["modifyvm", :id, "--nested-hw-virt", "on"]      
+      # Prevent VirtualBox from interfering with host audio stack
+      vb.customize ["modifyvm", :id, "--audio", "none"]
+      # Enable nested virtualisation  
+      vb.customize ["modifyvm", :id, "--nested-hw-virt", "on"]
     end
 
     n3.vm.disk :disk, name: "sdb", size: "120GB"
@@ -105,7 +114,10 @@ Vagrant.configure("2") do |config|
       vb.customize ["modifyvm", :id, "--largepages", "on"]
       # Use virtual processor identifiers  to accelerate context switching
       vb.customize ["modifyvm", :id, "--vtxvpid", "on"]
-      vb.customize ["modifyvm", :id, "--nested-hw-virt", "on"]      
+      # Prevent VirtualBox from interfering with host audio stack
+      vb.customize ["modifyvm", :id, "--audio", "none"]
+      # Enable nested virtualisation  
+      vb.customize ["modifyvm", :id, "--nested-hw-virt", "on"]
     end
 
     n4.vm.disk :disk, name: "sdb", size: "120GB"
@@ -132,7 +144,10 @@ Vagrant.configure("2") do |config|
       vb.customize ["modifyvm", :id, "--largepages", "on"]
       # Use virtual processor identifiers  to accelerate context switching
       vb.customize ["modifyvm", :id, "--vtxvpid", "on"]
-      vb.customize ["modifyvm", :id, "--nested-hw-virt", "on"]      
+      # Prevent VirtualBox from interfering with host audio stack
+      vb.customize ["modifyvm", :id, "--audio", "none"]
+      # Enable nested virtualisation  
+      vb.customize ["modifyvm", :id, "--nested-hw-virt", "on"]
     end
 
     n5.vm.disk :disk, name: "sdb", size: "120GB"
@@ -159,7 +174,10 @@ Vagrant.configure("2") do |config|
       vb.customize ["modifyvm", :id, "--largepages", "on"]
       # Use virtual processor identifiers  to accelerate context switching
       vb.customize ["modifyvm", :id, "--vtxvpid", "on"]
-      vb.customize ["modifyvm", :id, "--nested-hw-virt", "on"]      
+      # Prevent VirtualBox from interfering with host audio stack
+      vb.customize ["modifyvm", :id, "--audio", "none"]
+      # Enable nested virtualisation  
+      vb.customize ["modifyvm", :id, "--nested-hw-virt", "on"]
     end
 
     n6.vm.disk :disk, name: "sdb", size: "120GB"
