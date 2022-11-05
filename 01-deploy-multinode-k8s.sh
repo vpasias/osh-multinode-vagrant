@@ -50,4 +50,4 @@ execute_master_cmd "sudo apt-get install make"
 
 # Deploy K8s
 execute_master_cmd "make dev-deploy setup-host multinode"
-execute_master_cmd "make dev-deploy k8s multinode"
+#execute_master_cmd "make dev-deploy k8s multinode"
