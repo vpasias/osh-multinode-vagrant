@@ -43,6 +43,50 @@ function execute_n2 {
         ubuntu@172.24.1.11 "cd ~ && $*"
 }
 
+function execute_n3 {
+    ssh -o "LogLevel=FATAL" \
+        -o "Compression=yes" \
+        -o "DSAAuthentication=yes" \
+        -o "IdentitiesOnly=yes" \
+        -o "StrictHostKeyChecking=no" \
+        -o "UserKnownHostsFile=/dev/null" \
+        -i "etc/.vagrant/machines/n3/virtualbox/private_key" \
+        ubuntu@172.24.1.12 "cd ~ && $*"
+}
+
+function execute_n4 {
+    ssh -o "LogLevel=FATAL" \
+        -o "Compression=yes" \
+        -o "DSAAuthentication=yes" \
+        -o "IdentitiesOnly=yes" \
+        -o "StrictHostKeyChecking=no" \
+        -o "UserKnownHostsFile=/dev/null" \
+        -i "etc/.vagrant/machines/n4/virtualbox/private_key" \
+        ubuntu@172.24.1.13 "cd ~ && $*"
+}
+
+function execute_n5 {
+    ssh -o "LogLevel=FATAL" \
+        -o "Compression=yes" \
+        -o "DSAAuthentication=yes" \
+        -o "IdentitiesOnly=yes" \
+        -o "StrictHostKeyChecking=no" \
+        -o "UserKnownHostsFile=/dev/null" \
+        -i "etc/.vagrant/machines/n5/virtualbox/private_key" \
+        ubuntu@172.24.1.14 "cd ~ && $*"
+}
+
+function execute_n6 {
+    ssh -o "LogLevel=FATAL" \
+        -o "Compression=yes" \
+        -o "DSAAuthentication=yes" \
+        -o "IdentitiesOnly=yes" \
+        -o "StrictHostKeyChecking=no" \
+        -o "UserKnownHostsFile=/dev/null" \
+        -i "etc/.vagrant/machines/n6/virtualbox/private_key" \
+        ubuntu@172.24.1.15 "cd ~ && $*"
+}
+
 # Start/provision Vagrant VMs
 pushd "$(pwd)"
 cd etc
@@ -65,3 +109,7 @@ execute_master_cmd "cp -r /vagrant/deploy-k8s-kubeadm.sh /opt/openstack-helm-inf
 execute_master_cmd "make dev-deploy k8s multinode"
 
 execute_n2 "cp /vagrant/deploy-base.sh /home/ubuntu/deploy-base.sh && chmod +x /home/ubuntu/deploy-base.sh && ./deploy-base.sh"
+execute_n3 "cp /vagrant/deploy-base.sh /home/ubuntu/deploy-base.sh && chmod +x /home/ubuntu/deploy-base.sh && ./deploy-base.sh"
+execute_n4 "cp /vagrant/deploy-base.sh /home/ubuntu/deploy-base.sh && chmod +x /home/ubuntu/deploy-base.sh && ./deploy-base.sh"
+execute_n5 "cp /vagrant/deploy-base.sh /home/ubuntu/deploy-base.sh && chmod +x /home/ubuntu/deploy-base.sh && ./deploy-base.sh"
+execute_n6 "cp /vagrant/deploy-base.sh /home/ubuntu/deploy-base.sh && chmod +x /home/ubuntu/deploy-base.sh && ./deploy-base.sh"
