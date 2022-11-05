@@ -47,7 +47,12 @@ echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_re
 
 sudo apt-get update
 sudo apt-get install linux-headers-$(uname -r) dkms -y
-sudo apt-get install virtualbox-7.0 -y        
+sudo apt-get install virtualbox-7.0 -y    
+
+sudo vboxmanage setproperty machinefolder /mnt/extra/libvirt/
+vboxmanage list systemproperties | grep folder
+vboxmanage list hostonlyifs
+sudo adduser iason vboxusers
 
 # NOTE: Install latest vagrant version for compatibility with vagrant-disksize plugin.
 INSTALL_LOCATION="$(mktemp -d)"
@@ -60,8 +65,3 @@ sudo dpkg -i "$INSTALL_FILE"
 rm -rf "$INSTALL_LOCATION"
 
 vagrant plugin install vagrant-disksize
-
-sudo vboxmanage setproperty machinefolder /mnt/extra/libvirt/
-vboxmanage list systemproperties | grep folder
-vboxmanage list hostonlyifs
-sudo adduser iason vboxusers
