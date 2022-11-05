@@ -47,3 +47,8 @@ sudo dpkg -i "$INSTALL_FILE"
 rm -rf "$INSTALL_LOCATION"
 
 vagrant plugin install vagrant-disksize
+
+sudo vboxmanage setproperty machinefolder /mnt/extra/libvirt/
+vboxmanage list systemproperties | grep folder
+vboxmanage list hostonlyifs
+sudo adduser iason vboxusers
