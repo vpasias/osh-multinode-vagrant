@@ -47,7 +47,7 @@ echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_re
 
 sudo apt-get update
 sudo apt-get install linux-headers-$(uname -r) dkms -y
-sudo apt-get install virtualbox-7.0 -y    
+sudo apt-get install virtualbox-6.1 -y    
 
 sudo vboxmanage setproperty machinefolder /mnt/extra/libvirt/
 vboxmanage list systemproperties | grep folder
