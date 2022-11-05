@@ -31,6 +31,9 @@ sudo apt-get install --no-install-recommends -y \
 export DEBCONF_NONINTERACTIVE_SEEN=true
 export DEBIAN_FRONTEND=noninteractive
 
+sudo apt purge snapd -y
+sudo rm -rf ~/snap /snap /var/snap /var/lib/snapd
+
 sudo swapoff -a
 
 # Enable kernel modules
