@@ -23,6 +23,19 @@ export DEBIAN_FRONTEND=noninteractive
 
 sudo swapoff -a
 
+# Enable kernel modules
+sudo modprobe overlay
+sudo modprobe br_netfilter
+
+# Add some settings to sysctl
+sudo tee /etc/sysctl.d/kubernetes.conf<<EOF
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.ip_forward = 1
+EOF
+
+sudo sysctl --system
+
 echo "DefaultLimitMEMLOCK=16384" | sudo tee -a /etc/systemd/system.conf
 sudo systemctl daemon-reexec
 
