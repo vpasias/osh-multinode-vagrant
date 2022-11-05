@@ -64,4 +64,4 @@ execute_master_cmd "make dev-deploy setup-host multinode"
 execute_master_cmd "cp -r /vagrant/deploy-k8s-kubeadm.sh /opt/openstack-helm-infra/tools/gate/deploy-k8s-kubeadm.sh"
 execute_master_cmd "make dev-deploy k8s multinode"
 
-execute_n2 "cp  /vagrant/deploy-base.sh /home/ubuntu/deploy-base.sh && chmod +x /home/ubuntu/deploy-base.sh && ./deploy-base.sh"
+execute_n2 "cp /vagrant/deploy-base.sh /home/ubuntu/deploy-base.sh && chmod +x /home/ubuntu/deploy-base.sh && ./deploy-base.sh"
