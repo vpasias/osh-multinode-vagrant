@@ -33,7 +33,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
         qemu \
         ruby-dev \
         unzip \
-        virtualbox-6.1 \
+        VirtualBox \
         zlib1g-dev
 
 # NOTE: Install latest vagrant version for compatibility with vagrant-disksize plugin.
