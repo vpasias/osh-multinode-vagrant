@@ -50,5 +50,5 @@ execute_master_cmd "sudo apt-get install make"
 
 # Deploy K8s
 execute_master_cmd "make dev-deploy setup-host multinode"
-execute_master_cmd "chmod +x /vagrant/deploy-k8s-kubeadm.sh && cp -r /vagrant/deploy-k8s-kubeadm.sh /opt/openstack-helm-infra/tools/gate/deploy-k8s-kubeadm.sh"
+execute_master_cmd "cp -r /vagrant/deploy-k8s-kubeadm.sh /opt/openstack-helm-infra/tools/gate/deploy-k8s-kubeadm.sh"
 execute_master_cmd "make dev-deploy k8s multinode"
