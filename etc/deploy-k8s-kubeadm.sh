@@ -246,3 +246,24 @@ EOF
 
 kubectl create -f /tmp/${NAMESPACE}-ns.yaml
 done
+
+sudo rm -rf /etc/hosts
+sudo tee /etc/hosts<<EOF
+127.0.0.1 localhost localhost.localdomain localhost4localhost4.localdomain4
+
+# The following lines are desirable for IPv6 capable hosts
+::1 localhost6 localhost6.localdomain6
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+127.0.1.1       ubuntu-focal    ubuntu-focal
+
+127.0.2.1 n1 n1
+172.24.1.11 n2 n2
+172.24.1.12 n3 n3
+172.24.1.13 n4 n4
+172.24.1.14 n5 n5
+172.24.1.15 n6 n6
+EOF
