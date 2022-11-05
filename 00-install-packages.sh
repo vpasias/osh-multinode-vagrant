@@ -26,14 +26,14 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
         curl \
         dnsmasq-base \
         ebtables \
-        libvirt-bin \
+        qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils \
         libvirt-dev \
         libxml2-dev \
         libxslt-dev \
         qemu \
         ruby-dev \
         unzip \
-        virtualbox \
+        virtualbox-6.1 \
         zlib1g-dev
 
 # NOTE: Install latest vagrant version for compatibility with vagrant-disksize plugin.
