@@ -39,7 +39,7 @@ function execute_n2 {
         -o "IdentitiesOnly=yes" \
         -o "StrictHostKeyChecking=no" \
         -o "UserKnownHostsFile=/dev/null" \
-        -i "etc/.vagrant/machines/n1/virtualbox/private_key" \
+        -i "etc/.vagrant/machines/n2/virtualbox/private_key" \
         ubuntu@172.24.1.11 "cd ~ && $*"
 }
 
