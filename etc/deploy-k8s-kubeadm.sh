@@ -160,11 +160,13 @@ rm -rf "${TMP_DIR}"
 
 # NOTE: Deploy kubernetes using kubeadm. A CNI that supports network policy is
 # required for validation; use calico for simplicity.
-sudo kubeadm init --pod-network-cidr=192.168.0.0/16
+sudo kubeadm init --api-advertise-addresses=172.24.1.10 --upload-certs --pod-network-cidr=192.168.0.0/16 --token ayngk7.m1555duk5x2i3ctt --token-ttl 0 | tee /home/ubuntu/kubeadm.log
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+sudo cp -i /home/ubuntu/kubeadm.log ~/.kube/kubeadm.log
 
 # Taing the node so that the pods can be deployed on master nodes.
 kubectl taint nodes --all node-role.kubernetes.io/master-
