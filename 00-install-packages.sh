@@ -54,6 +54,10 @@ vboxmanage list systemproperties | grep folder
 vboxmanage list hostonlyifs
 sudo adduser iason vboxusers
 
+cat << EOF | sudo tee /etc/vbox/networks.conf
+* 0.0.0.0/0 ::/0
+EOF
+
 # NOTE: Install latest vagrant version for compatibility with vagrant-disksize plugin.
 INSTALL_LOCATION="$(mktemp -d)"
 INSTALL_FILE="${INSTALL_LOCATION}/vagrant.deb"
